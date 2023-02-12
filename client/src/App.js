@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import Header from "./Header";
-import SLCMap from "./SLCMap";
-import Faves from "./Faves";
+import Header from "./components/Header";
+import SLCMap from "./components/SLCMap";
+import Faves from "./components/Faves";
 // import SearchBar from "./SearchBar";
-import LocationCard from "./LocationCard";
+import LocationCard from "./components/LocationCard";
 import "./App.css";
 
 function App() {

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { PawsContext } from "./PawsContext";
 import SearchBar from "./SearchBar";
 import "./LocationCard.css";
-import logo from "./assets/Logo_RGB.png";
+import logo from "../assets/Logo_RGB.png";
 
 function LocationCard() {
   const { filteredSearchList, yelpStars, handleFave } = useContext(PawsContext);

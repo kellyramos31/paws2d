@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
-import zero from "./assets/small_0.png";
-import one from "./assets/small_1.png";
-import oneHalf from "./assets/small_1_half.png";
-import two from "./assets/small_2.png";
-import twoHalf from "./assets/small_2_half.png";
-import three from "./assets/small_3.png";
-import threeHalf from "./assets/small_3_half.png";
-import four from "./assets/small_4.png";
-import fourHalf from "./assets/small_4_half.png";
-import five from "./assets/small_5.png";
+import zero from "../assets/small_0.png";
+import one from "../assets/small_1.png";
+import oneHalf from "../assets/small_1_half.png";
+import two from "../assets/small_2.png";
+import twoHalf from "../assets/small_2_half.png";
+import three from "../assets/small_3.png";
+import threeHalf from "../assets/small_3_half.png";
+import four from "../assets/small_4.png";
+import fourHalf from "../assets/small_4_half.png";
+import five from "../assets/small_5.png";
 
 const PawsContext = React.createContext();
 

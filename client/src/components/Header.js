@@ -1,10 +1,10 @@
 import React from "react";
 import "./Header.css";
-import logo from "./assets/paws2-logo-green.jpg";
-import glassesDog from "./assets/sunglasses-dog-cropped.jpg";
-import fluffyPuppy from "./assets/fluffy-puppy.jpg";
-import dogWaterBottle from "./assets/dog-water-bottle.jpg";
-import roundGlassesDog from "./assets/round-glasses-dog.jpg";
+import logo from "../assets/paws2-logo-green.jpg";
+import glassesDog from "../assets/sunglasses-dog-cropped.jpg";
+import fluffyPuppy from "../assets/fluffy-puppy.jpg";
+import dogWaterBottle from "../assets/dog-water-bottle.jpg";
+import roundGlassesDog from "../assets/round-glasses-dog.jpg";
 
 function Header() {
   return (

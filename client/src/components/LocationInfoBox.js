@@ -1,5 +1,5 @@
 import "./LocationInfoBox.css"
-import print from "./assets/print-306214_640.png"
+import print from "../assets/print-306214_640.png"
 
 
 
