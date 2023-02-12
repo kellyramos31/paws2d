@@ -1,16 +1,16 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { PawsContextProvider } from "./PawsContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <Router>
+  <BrowserRouter>
     <PawsContextProvider>
       <App />
     </PawsContextProvider>
-  </Router>,
-  document.getElementById("root")
+  </BrowserRouter>,
+  // document.getElementById("root")
 );

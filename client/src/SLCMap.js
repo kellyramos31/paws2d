@@ -5,6 +5,7 @@
 import React, { useContext} from "react"
 import {useState} from "react"
 import "./SLCMap.css"
+import SearchBar from "./SearchBar"
 import GoogleMapReact from 'google-map-react';
 import LocationMarker from "./LocationMarker"
 import LocationInfoBox from "./LocationInfoBox"
@@ -38,7 +39,7 @@ const mapMarkers = filteredSearchList.map((restaurant =>
 
 return (
   <div>
-     
+     <SearchBar/>
   <div className="map">
       <GoogleMapReact
           bootstrapURLKeys={{ key: `${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}}

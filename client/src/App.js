@@ -3,7 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Header from "./Header";
 import SLCMap from "./SLCMap";
 import Faves from "./Faves";
-import SearchBar from "./SearchBar";
+// import SearchBar from "./SearchBar";
 import LocationCard from "./LocationCard";
 import "./App.css";
 
@@ -27,17 +27,9 @@ function App() {
       </div>
 
       <Routes>
-        <Route exact path="/">
-          <SearchBar />
-          <SLCMap />
-        </Route>
-        <Route path="/details">
-          <SearchBar />
-          <LocationCard />
-        </Route>
-        <Route path="/faves">
-          <Faves />
-        </Route>
+        <Route exact path="/" element={<SLCMap />} navigateTo="/"/>
+        <Route path="/details" element={<LocationCard/>} navigateTo="/"/>
+        <Route path="/faves" element={<Faves/>} navigateTo="/"/>
       </Routes>
     </div>
   );
@@ -45,4 +37,4 @@ function App() {
 
 export default App;
 
-//comment
+
