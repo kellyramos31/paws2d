@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+}
+
+.faves-page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15%;
+  align-items: center;
+  z-index: 2;
+}
+
+.details-list {
+  padding-top: 2%;
+}
+
+.restaurant {
+  color: #32cd32;
+  font-family: Arial;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.restaurant-list {
+  font-family: Arial;
+  font-style: italic;
+  font-size: 16px;
+}
+
+ul {
+  color: whitesmoke;
+}
+
+li {
+  list-style-image: url(./assets/print-306214_640.png);
+}
+
+form {
+  color: white;
+  font-family: Arial;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  margin-left: -2px;
+}
+
+.map-button {
+  color: white;
+  font-weight: bolder;
+  width: 200px;
+  padding: 30px;
+  position: fixed;
+  top: 100px;
+  left: 220px;
+  z-index: 7;
+}
+
+.list-button {
+  color: white;
+  font-weight: bolder;
+  width: 200px;
+  padding: 30px;
+  position: fixed;
+  top: 100px;
+  left: 220px;
+  z-index: 7;
+}
+
+@media only screen and (max-width: 400px) {
+  .map-button {
+    position: fixed;
+    top: 21%;
+    left: 55%;
+    height: 50px;
+    width: 155px;
+    padding: 0;
+    z-index: 7;
+  }
+
+  .list-button {
+    position: fixed;
+    top: 21%;
+    left: 55%;
+    height: 50px;
+    width: 155px;
+    padding: 0;
+    z-index: 7;
+  }
+
+  .details-list {
+    margin-top: 105px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .restaurant-list {
+    padding-top: 20px;
+  }
+
+  .doggie-image {
+    width: 90%;
+    height: 90%;
+  }
+
+   
+
+
+
+}
+
+@media only screen and (max-width: 768px) {
+  .details-list {
+    margin-top: 115px;
+  }
+}

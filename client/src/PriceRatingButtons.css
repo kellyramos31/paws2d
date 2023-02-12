@@ -1,0 +1,23 @@
+.price-rating-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+button.pricing {
+  width: 50px;
+}
+
+@media only screen and (max-width: 400px) {
+  .price-rating-buttons {
+    position: fixed;
+    right: 2%;
+    margin-top: -2.5%;
+  }
+  button.pricing {
+    margin-left: 12px;
+    font-size: 11px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    width: 30px;
+  }
+}

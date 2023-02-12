@@ -1,0 +1,68 @@
+.rest-name {
+  margin-bottom: 0;
+  font-weight: bold;
+  font-family: Arial;
+  font-style: italic;
+  font-size: 19px;
+  margin-left: 35px;
+  color: green;
+}
+
+.location-info {
+  position: absolute;
+  top: 275px;
+  right: 4%;
+  width: 250px;
+  min-height: 80px;
+  padding-left: 5px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgba(245, 245, 245, 0.5);
+  border: 5px solid darkblue;
+  border-radius: 20px;
+  font-size: 16px;
+  font-family: Arial;
+  font-weight: bold;
+  font-style: italic;
+  color: darkblue;
+}
+
+.street {
+  margin-left: 35px;
+}
+
+.city {
+  margin-left: 35px;
+}
+
+.phone {
+  margin-left: 35px;
+  padding-bottom: 8px;
+}
+
+.isHearted {
+  float: right;
+  font-size: 20px;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 400px) {
+  .location-info {
+    width: 185px;
+    top: 195px;
+    right: 6%;
+    font-size: 14px;
+  }
+
+  .rest-name {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .location-info {
+    top: 240px;
+    margin-right: -20px;
+  }
+}

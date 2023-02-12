@@ -1,0 +1,23 @@
+form {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.photo-input {
+  margin-left: -3px;
+  width: 325px;
+  height: 14px;
+}
+
+.photo-button {
+  width: 200px;
+}
+
+@media only screen and (max-width: 400px) {
+  .photo-input {
+    width: 255px;
+  }
+}
