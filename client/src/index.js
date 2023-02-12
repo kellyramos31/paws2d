@@ -11,6 +11,6 @@ root.render(
     <PawsContextProvider>
       <App />
     </PawsContextProvider>
-  </BrowserRouter>,
+  </BrowserRouter>
   // document.getElementById("root")
 );
