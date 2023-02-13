@@ -13,7 +13,8 @@ app.use(cors());
 //     res.json("hi")
 // })
 
-//  app.use(express.static(path.join(__dirname, "build")));
+
+
 
 app.use(express.static(path.join(__dirname, "client", "build")));
 
@@ -74,3 +75,5 @@ app.listen(8000, () => console.log(`Server running on ${PORT} `));
 
   
     // "start": "node server.js && react-scripts start",
+    //   "start:frontend": "react-scripts start",
+    // "start:backend": "node server.js",

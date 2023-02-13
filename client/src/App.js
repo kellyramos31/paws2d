@@ -7,6 +7,7 @@ import Faves from "./components/Faves";
 import LocationCard from "./components/LocationCard";
 import "./App.css";
 
+
 function App() {
   return (
     <div>
@@ -27,7 +28,7 @@ function App() {
       </div>
 
       <Routes>
-        <Route exact path="/" element={<SLCMap />} navigateTo="/"/>
+        <Route exact path="/" element={<SLCMap/>} navigateTo="/"/>
         <Route path="/details" element={<LocationCard/>} navigateTo="/"/>
         <Route path="/faves" element={<Faves/>} navigateTo="/"/>
       </Routes>
