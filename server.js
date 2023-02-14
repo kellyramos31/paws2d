@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, "client", "build")));
 //   res.json("hi")
 // })
 
-//with commented out:  
+
 
 app.get("/eateries", (req, res) => {
   axios

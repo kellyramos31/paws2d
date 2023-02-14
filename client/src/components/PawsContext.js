@@ -31,6 +31,7 @@ class PawsContextProvider extends Component {
   //Two chained API calls b/c limited to 50 datapoints at a time:
 
   componentDidMount() {
+    console.log("yo componentdidmount")
     this.getData();
   }
 
