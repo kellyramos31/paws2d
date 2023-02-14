@@ -13,15 +13,14 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, "client", "build")));
 
-//if keep next 3 lines, then server runs on cyclic & can get to the 2 endpoints below
+
 // app.use("/", (req, res)=> {
 //   res.json("hi")
 // })
 
 
-
-app.get("/eateries", (req, res) => {
-  axios
+app.get("/eateries", async(req, res) => {
+  await axios
     .get(
       `https://api.yelp.com/v3/businesses/search?location=Salt Lake City&categories=restaurants&term="dog friendly"`,
 
@@ -42,8 +41,8 @@ app.get("/eateries", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.get("/moreeats", (req, res) => {
-  axios
+app.get("/moreeats", async(req, res) => {
+  await axios
     .get(
       `https://api.yelp.com/v3/businesses/search?location=Salt Lake City&categories=restaurants&term="dog friendly"`,
 
