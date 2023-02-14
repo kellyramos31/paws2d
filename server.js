@@ -35,7 +35,8 @@ app.get("/eateries", (req, res) => {
       }
     )
     .then((response) => {
-      res.json(response.data.businesses);
+      console.log(res.json(response.data.businesses));
+
     })
 
     .catch((err) => console.log(err));
