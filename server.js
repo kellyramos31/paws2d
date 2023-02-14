@@ -1,15 +1,19 @@
-const PORT = 8000 || process.env.port;
+
 const express = require("express");
+const app = express();
+require("dotenv").config();
 const cors = require("cors");
 const axios = require("axios");
-require("dotenv").config();
 const path = require("path");
+const port = process.env.port || 8000;
 
-const app = express();
 
+app.use(express.json());
 app.use(cors());
 
 app.use(express.static(path.join(__dirname, "client", "build")));
+
+
 
 app.get("/eateries", (req, res) => {
   axios
@@ -57,4 +61,4 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-app.listen(8000, () => console.log(`Server running on ${PORT} `));
+app.listen(port, () => console.log(`Server running on ${port} `));
