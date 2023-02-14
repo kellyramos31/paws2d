@@ -1,4 +1,4 @@
-const PORT = 8000;
+const PORT = 8000 || process.env.port;
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
@@ -58,5 +58,3 @@ app.get("*", (req, res) => {
 });
 
 app.listen(8000, () => console.log(`Server running on ${PORT} `));
-
-
