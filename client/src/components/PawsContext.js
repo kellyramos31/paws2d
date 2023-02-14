@@ -38,12 +38,12 @@ class PawsContextProvider extends Component {
   getData = async () => {
     const dogFriendlyRestaurants = {
       method: "GET",
-      url: `http://localhost:8000/eateries`,
+      url: `https://magnificent-helmet-lion.cyclic.app/eateries`,
     };
 
     const moreDogFriendly = {
       method: "GET",
-      url: `http://localhost:8000/moreeats`,
+      url: `https://magnificent-helmet-lion.cyclic.app/moreeats`,
     };
 
     await axios
