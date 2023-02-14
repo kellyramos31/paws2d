@@ -13,9 +13,12 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, "client", "build")));
 
-app.get("/", (req, res)=> {
-  res.json("hi")
-})
+//if keep next 3 lines, then server runs on cyclic & can get to the 2 endpoints below
+// app.use("/", (req, res)=> {
+//   res.json("hi")
+// })
+
+//with commented out:  
 
 app.get("/eateries", (req, res) => {
   axios
