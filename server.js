@@ -70,3 +70,4 @@ app.listen(PORT, () => console.log(`Server running on ${PORT}`));
 
 
 //not NOT NOT NOT NOT
+// "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
