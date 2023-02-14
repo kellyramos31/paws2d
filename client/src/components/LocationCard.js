@@ -49,12 +49,17 @@ function LocationCard() {
                         handleFave(
                           business.id,
                           business.name,
+                          business.categories[0].title,
                           business.location.address1,
                           business.location.city,
                           business.display_phone,
-                          business.coordinates.latitude,
-                          business.coordinates.longitude,
-                          business.isHearted
+                          business.coordinates,
+                          business.rating,
+                          business.review_count,
+                          business.price,
+                          business.image_url,
+                          business.isHearted,
+                          business.url
                         )
                       }
                     >
@@ -69,12 +74,17 @@ function LocationCard() {
                         handleFave(
                           business.id,
                           business.name,
+                          business.categories[0].title,
                           business.location.address1,
                           business.location.city,
                           business.display_phone,
-                          business.coordinates.latitude,
-                          business.coordinates.longitude,
-                          business.isHearted
+                          business.coordinates,
+                          business.isHearted,
+                          business.url,
+                          business.price,
+                          business.rating,
+                          business.review_count,
+                          business.image_url
                         )
                       }
                     >

@@ -30,7 +30,11 @@ class PawsContextProvider extends Component {
 
   //Two chained API calls b/c limited to 50 datapoints at a time:
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.getData();
+  }
+
+  getData = async () => {
     const dogFriendlyRestaurants = {
       method: "GET",
       url: `http://localhost:8000/eateries`,
@@ -41,16 +45,15 @@ class PawsContextProvider extends Component {
       url: `http://localhost:8000/moreeats`,
     };
 
-   await axios
+    await axios
       .request(dogFriendlyRestaurants)
 
       .then((response) => {
         console.log("first response", response.data);
         this.setState({ dogFriendlyRestaurants: response.data });
-        // this.addToggleProperty();
       });
 
-   await axios
+    return await axios
       .request(moreDogFriendly)
       .then((response) => {
         console.log("second response", response.data);
@@ -69,7 +72,7 @@ class PawsContextProvider extends Component {
       });
   };
 
-  addToggleProperty = () => {
+  addToggleProperty() {
     console.log("addToggleProperty called");
     let addedProperty = this.state.dogFriendlyRestaurants.map((restaurant) => {
       restaurant.isHearted = false;
@@ -81,7 +84,7 @@ class PawsContextProvider extends Component {
       dogFriendlyRestaurants: addedProperty,
       filteredSearchList: addedProperty,
     });
-  };
+  }
 
   //Switch statement to display Yelp Stars ratings
   //(NOTE:  leave breaks in even though "unreachable code" warning)
@@ -157,26 +160,42 @@ class PawsContextProvider extends Component {
     this.setState({
       dogFriendlyRestaurants: takeOut,
       filteredSearchList: takeOut,
-      // isHearted: !this.state.isHearted,
     });
-    // localStorage.clear()
-    // localStorage.setItem("myFaves", JSON.stringify(this.state.myFaves));
   };
 
-  handleFave = (id, restaurant, address, city, phone, lat, lng, isHearted) => {
-    console.log("current isHearted state:", isHearted);
+  handleFave = (
+    id,
+    name,
+    category,
+    address1,
+    city,
+    phone,
+    coordinates,
+    isHearted,
+    url,
+    price,
+    rating,
+    reviews,
+    image
+  ) => {
+    // console.log("current isHearted state:", business.isHearted);
     this.handleFaveToggle(id);
     console.log("id:", id);
 
     const newFave = {
       id: id,
-      name: restaurant,
-      address: address,
+      name: name,
+      category: category,
+      address: address1,
       city: city,
       phone: phone,
-      lat: lat,
-      lng: lng,
+      coordinates: coordinates,
       isHearted: !isHearted,
+      url: url,
+      price: price,
+      rating: rating,
+      reviews: reviews,
+      image: image,
       myDoggieImage: "",
     };
 
@@ -190,25 +209,55 @@ class PawsContextProvider extends Component {
       this.setState((prevState) => ({
         myFaves: [...prevState.myFaves, newFave],
       }));
-      // localStorage.clear()
-      // localStorage.setItem("myFaves", JSON.stringify(this.state.myFaves));
     } else if (newFave.isHearted === false) {
       this.handleFaveDelete(id);
-      // localStorage.remove("newFave");
     }
   };
 
-  handleFaveDelete = (id) => {
+  handleFaveDelete = (id, deletedFave) => {
     console.log("delete this id", id);
-
+    console.log("deletedFave", deletedFave);
     this.setState((prevState) => ({
       myFaves: prevState.myFaves.filter((fave) => fave.id !== id),
     }));
 
-    this.handleFaveToggle(id);
+    const deleted = {
+      id: deletedFave.id,
+      name: deletedFave.name,
+      categories: deletedFave.category,
+      location: { address1: deletedFave.address },
+      city: deletedFave.city,
+      url: deletedFave.url,
+      rating: deletedFave.rating,
+      price: deletedFave.price,
+      review_count: deletedFave.reviews,
+      image_url: deletedFave.image,
+      coordinates: { latitude: deletedFave.lat, longitude: deletedFave.lng },
+      display_phone: deletedFave.phone,
+      isHearted: false,
+    };
 
-    // localStorage.clear()
-    // localStorage.remove("id");
+    this.handleFaveToggle(id);
+    //remove item from localStorage
+    const localFaves = localStorage.getItem("myFaves");
+    const updatedFaves = JSON.parse(localFaves);
+    const index = updatedFaves.findIndex((item) => item.id === id);
+    updatedFaves.splice(index, 1);
+    localStorage.setItem("myFaves", JSON.stringify(updatedFaves));
+
+    console.log("add it back to original list");
+    this.setState((prevState) => ({
+      dogFriendlyRestaurants: [...prevState.dogFriendlyRestaurants, deleted],
+      filteredSearchList: [...prevState.filteredSearchList, deleted],
+    }));
+
+    // console.log("addItBackToList", addItBackToList)
+    // this.setState({dogFriendlyRestaurants: addItBackToList})
+    //add back to overall dogfriendly here
+    // this.setState((prevState)=>({
+    //   dogFriendlyRestaurants: [...prevState.dogFriendlyRestaurants, deletedFave ],
+    //   filteredSearchList: [...prevState.filteredSearchList, deletedFave ],
+    // })
   };
 
   searchBarOnChange = (searchTerm) => {

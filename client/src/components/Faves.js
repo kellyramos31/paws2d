@@ -3,6 +3,7 @@ import { PawsContext} from "./PawsContext"
 import "./Faves.css"
 import PhotoForm from "./PhotoForm"
 import FavesOnlyMap from "./FavesOnlyMap"
+import logo from "../assets/Logo_RGB.png";
 
 
 
@@ -50,7 +51,18 @@ function Faves() {
                           <br />
                           {fave.address}, {fave.city}
                           <br />
+                          Category: {fave.category}
+                          <br />
                           Phone: {fave.phone}
+                          <a target="_blank" rel="noreferrer" href={fave.url}>
+                            <br />
+                            <img
+                              id="link-to-yelp-logo"
+                              className="yelp-logo"
+                              src={logo}
+                              alt="Yelp Logo"
+                            />
+                          </a>
                         </div>
 
                         {fave.myDoggieImage !== "" ? (
@@ -72,7 +84,8 @@ function Faves() {
                           <button
                             key={fave.id}
                             id={fave.id}
-                            onClick={(id) => handleFaveDelete(fave.id)}
+                            fave={fave}
+                            onClick={() => handleFaveDelete(fave.id, fave)}
                             className="delete-button"
                           >
                             Delete Fave

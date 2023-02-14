@@ -68,6 +68,11 @@ input {
   z-index: 7;
 }
 
+#link-to-yelp-logo{
+  margin-left: -4%;
+  font-size-adjust: -10%;
+}
+
 @media only screen and (max-width: 400px) {
   .map-button {
     position: fixed;
