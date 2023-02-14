@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "client", "build")));
 // })
 
 
-app.get("/eateries", async(req, res) => {
+app.get("https://magnificent-helmet-lion.cyclic.app/eateries", async(req, res) => {
   await axios
     .get(
       `https://api.yelp.com/v3/businesses/search?location=Salt Lake City&categories=restaurants&term="dog friendly"`,
@@ -41,26 +41,28 @@ app.get("/eateries", async(req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.get("/moreeats", async(req, res) => {
-  await axios
-    .get(
-      `https://api.yelp.com/v3/businesses/search?location=Salt Lake City&categories=restaurants&term="dog friendly"`,
+app.get(
+  "https://magnificent-helmet-lion.cyclic.app/moreeats", async(req, res) => {
+    await axios
+      .get(
+        `https://api.yelp.com/v3/businesses/search?location=Salt Lake City&categories=restaurants&term="dog friendly"`,
 
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
-        },
-        params: {
-          limit: 50,
-          offset: 51,
-        },
-      }
-    )
-    .then((response) => {
-      res.json(response.data.businesses);
-    })
-    .catch((err) => console.log(err));
-});
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+          },
+          params: {
+            limit: 50,
+            offset: 51,
+          },
+        }
+      )
+      .then((response) => {
+        res.json(response.data.businesses);
+      })
+      .catch((err) => console.log(err));
+  }
+);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
