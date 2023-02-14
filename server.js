@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "client", "build")));
 // })
 
 
-app.get("https://magnificent-helmet-lion.cyclic.app/eateries", async(req, res) => {
+app.get("/eateries", async(req, res) => {
   await axios
     .get(
       `https://api.yelp.com/v3/businesses/search?location=Salt Lake City&categories=restaurants&term="dog friendly"`,
@@ -42,7 +42,7 @@ app.get("https://magnificent-helmet-lion.cyclic.app/eateries", async(req, res) =
 });
 
 app.get(
-  "https://magnificent-helmet-lion.cyclic.app/moreeats", async(req, res) => {
+  "/moreeats", async(req, res) => {
     await axios
       .get(
         `https://api.yelp.com/v3/businesses/search?location=Salt Lake City&categories=restaurants&term="dog friendly"`,
