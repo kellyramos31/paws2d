@@ -240,12 +240,13 @@ class PawsContextProvider extends Component {
 
     this.handleFaveToggle(id);
     //remove item from localStorage
+    if (localStorage.getItem("info") !== null) {
     const localFaves = localStorage.getItem("myFaves");
     const updatedFaves = JSON.parse(localFaves);
     const index = updatedFaves.findIndex((item) => item.id === id);
     updatedFaves.splice(index, 1);
     localStorage.setItem("myFaves", JSON.stringify(updatedFaves));
-
+    }
     console.log("add it back to original list");
     this.setState((prevState) => ({
       dogFriendlyRestaurants: [...prevState.dogFriendlyRestaurants, deleted],
