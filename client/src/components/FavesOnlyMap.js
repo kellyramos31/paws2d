@@ -39,14 +39,14 @@ export default function SLCMap() {
       key={restaurant.id}
       id={restaurant.id}
       name={restaurant.name}
-      address={restaurant.address}
+      address={restaurant.location.address1}
       lat={restaurant.coordinates.latitude}
       lng={restaurant.coordinates.longitude}
       onClick={() =>
         setLocationInfo({
           name: restaurant.name,
-          address: restaurant.address,
-          city: restaurant.city,
+          address: restaurant.location.address1,
+          city: restaurant.location.city,
           phone: restaurant.phone,
           isHearted: restaurant.isHearted,
         })
