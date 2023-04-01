@@ -79,13 +79,12 @@ function LocationCard() {
                           business.location.city,
                           business.display_phone,
                           business.coordinates,
-                          business.isHearted,
-                          business.url,
-                          business.price,
                           business.rating,
                           business.review_count,
-                          business.image_url
-
+                          business.price,
+                          business.image_url,
+                          business.isHearted,
+                          business.url
                         )
                       }
                     >

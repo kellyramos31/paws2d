@@ -201,6 +201,7 @@ class PawsContextProvider extends Component {
       myDoggieImage: "",
     };
 
+
     console.log("newFave is:", newFave);
     console.log("newFave.isHearted:", newFave.isHearted);
     console.log("current isHearted state", this.state.isHearted);
