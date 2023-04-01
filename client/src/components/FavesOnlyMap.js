@@ -18,15 +18,15 @@ export default function FavesOnlyMap() {
     zoom: 11,
   };
 
-const { filteredSearchList } = useContext(PawsContext);
+const { myFaves} = useContext(PawsContext);
 
   // const { myFaves } = useContext(PawsContext);
 
-  let getFaveMarkers = filteredSearchList.filter(
-    (restaurant) => restaurant.isHearted
-  );
+  // let getFaveMarkers = filteredSearchList.filter(
+  //   (restaurant) => restaurant.isHearted
+  // );
 
-  console.log("getFaveMarkers that are hearted", getFaveMarkers)
+  // console.log("getFaveMarkers that are hearted", getFaveMarkers)
 
   // if(myFaves){
   //   getFaveMarkers = [...myFaves]
@@ -36,7 +36,7 @@ const { filteredSearchList } = useContext(PawsContext);
 
   // console.log("myFaves to use for markers", myFaves);
 
-  const mapMarkers = getFaveMarkers.map((restaurant) => (
+  const mapMarkers = myFaves.map((restaurant) => (
     <LocationMarker
       key={restaurant.id}
       id={restaurant.id}
