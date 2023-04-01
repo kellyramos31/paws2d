@@ -154,13 +154,14 @@ class PawsContextProvider extends Component {
       }
     );
 
-    const takeOut = updatedDogFriendly.filter(
-      (business) => business.isHearted === false
-    );
+    // const takeOut = updatedDogFriendly.filter(
+    //   (business) => business.isHearted === false
+    // );
 
     this.setState({
-      dogFriendlyRestaurants: takeOut,
-      filteredSearchList: takeOut,
+      dogFriendlyRestaurants: updatedDogFriendly,
+      filteredSearchList: updatedDogFriendly,
+      isHearted: !business.isHearted
     });
   };
 
