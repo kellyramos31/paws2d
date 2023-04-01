@@ -245,30 +245,14 @@ class PawsContextProvider extends Component {
     }
   };
 
-  handleFaveDelete = (id, deletedFave) => {
+  handleFaveDelete = (id) => {
     console.log("delete this id", id);
-    console.log("deletedFave", deletedFave);
     this.setState((prevState) => ({
       myFaves: prevState.myFaves.filter((fave) => fave.id !== id),
     }));
 
-    // const deleted = {
-    //   id: deletedFave.id,
-    //   name: deletedFave.name,
-    //   categories: deletedFave.category,
-    //   location: { address1: deletedFave.address },
-    //   city: deletedFave.city,
-    //   url: deletedFave.url,
-    //   rating: deletedFave.rating,
-    //   price: deletedFave.price,
-    //   review_count: deletedFave.reviews,
-    //   image_url: deletedFave.image,
-    //   coordinates: { latitude: deletedFave.lat, longitude: deletedFave.lng },
-    //   display_phone: deletedFave.phone,
-    //   isHearted: false,
-    // };
-
     this.handleFaveToggle(id);
+
     //remove item from localStorage
     if (localStorage.getItem("info") !== null) {
       const localFaves = localStorage.getItem("myFaves");
@@ -276,21 +260,10 @@ class PawsContextProvider extends Component {
       const index = updatedFaves.findIndex((item) => item.id === id);
       updatedFaves.splice(index, 1);
       localStorage.setItem("myFaves", JSON.stringify(updatedFaves));
-    }
-    // console.log("add it back to original list");
-    // this.setState((prevState) => ({
-    //   dogFriendlyRestaurants: [...prevState.dogFriendlyRestaurants, deleted],
-    //   filteredSearchList: [...prevState.filteredSearchList, deleted],
-    };
+    } 
+  };
 
-    // console.log("addItBackToList", addItBackToList)
-    // this.setState({dogFriendlyRestaurants: addItBackToList})
-    //add back to overall dogfriendly here
-    // this.setState((prevState)=>({
-    //   dogFriendlyRestaurants: [...prevState.dogFriendlyRestaurants, deletedFave ],
-    //   filteredSearchList: [...prevState.filteredSearchList, deletedFave ],
-    // })
-  // };
+
 
   searchBarOnChange = (searchTerm) => {
     console.log("searchText", searchTerm);
