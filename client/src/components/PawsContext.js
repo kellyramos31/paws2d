@@ -96,6 +96,7 @@ class PawsContextProvider extends Component {
       console.log("restaurant.id", restaurant.id)
       console.log("this.state.myFaves", this.state.myFaves)
       let check = this.state.myFaves.includes(restaurant)
+      console.log("check", check)
       if(check === true){
         restaurant.isHearted = true
       }else {
