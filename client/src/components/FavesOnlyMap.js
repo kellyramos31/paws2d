@@ -18,7 +18,7 @@ export default function SLCMap() {
     zoom: 11,
   };
 
-  // const { myFaves, filteredSearchList } = useContext(PawsContext);
+const { myFaves, filteredSearchList } = useContext(PawsContext);
 
   // const { myFaves } = useContext(PawsContext);
 
