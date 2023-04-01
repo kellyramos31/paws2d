@@ -66,12 +66,35 @@ class PawsContextProvider extends Component {
         });
 
         this.addToggleProperty();
+        this.updateDataToReflectLocalStorageOnLoad();
       })
 
       .catch((error) => {
         console.log("error", error);
       });
   };
+
+
+  updateDataToReflectLocalStorageOnLoad() {
+
+let result = this.state.dogFriendlyRestaurants.map((obj) => {
+  if(this.state.myFaves.includes(obj.id)){
+  const isHearted = true
+  return {
+    ...obj,
+    isHearted: isHearted,
+  };
+} else {
+  return obj
+}
+});
+
+console.log(result);
+
+this.setState({
+      dogFriendlyRestaurants: result,
+
+})}
 
   addToggleProperty() {
     console.log("addToggleProperty called");
