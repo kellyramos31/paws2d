@@ -32,11 +32,11 @@ const { myFaves, filteredSearchList } = useContext(PawsContext);
   //   getFaveMarkers = [...myFaves]
   // }
 
-  const getFaveMarkers = [...myFaves];
+  // const getFaveMarkers = [...myFaves];
 
-  console.log("getFaveMarkers", getFaveMarkers);
+  console.log("myFaves to use for markers", myFaves);
 
-  const mapMarkers = getFaveMarkers.map((restaurant) => (
+  const mapMarkers = myFaves.map((restaurant) => (
     <LocationMarker
       key={restaurant.id}
       id={restaurant.id}
