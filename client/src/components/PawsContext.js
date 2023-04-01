@@ -190,7 +190,7 @@ class PawsContextProvider extends Component {
       address: address1,
       city: city,
       phone: phone,
-      coordinates: coordinates,
+      coordinates: { latitude: latitude, longitude: longitude},
       isHearted: !isHearted,
       url: url,
       price: price,

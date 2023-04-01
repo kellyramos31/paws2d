@@ -85,6 +85,7 @@ function LocationCard() {
                           business.rating,
                           business.review_count,
                           business.image_url
+
                         )
                       }
                     >
