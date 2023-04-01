@@ -66,7 +66,6 @@ class PawsContextProvider extends Component {
         });
 
         this.addToggleProperty();
-        this.updateDataToReflectLocalStorageOnLoad();
       })
 
       .catch((error) => {
@@ -75,27 +74,30 @@ class PawsContextProvider extends Component {
   };
 
 
-updateDataToReflectLocalStorageOnLoad() {
+// updateDataToReflectLocalStorageOnLoad() {
 
-let result = this.state.dogFriendlyRestaurants.map((restaurant) => {
-  if(this.state.myFaves.includes(restaurant.id)){
-    restaurant.isHearted = true
-  } 
-  return restaurant
-});
+// let result = this.state.dogFriendlyRestaurants.map((restaurant) => {
+//   if(this.state.myFaves.includes(restaurant.id)){
+//     restaurant.isHearted = true
+//   } 
+//   return restaurant
+// });
 
-console.log("result", result);
+// console.log("result", result);
 
-this.setState({
-      dogFriendlyRestaurants: result,
-      filteredSearchList: result
-})}
+// this.setState({
+//       dogFriendlyRestaurants: result,
+//       filteredSearchList: result
+// })}
 
   addToggleProperty() {
     console.log("addToggleProperty called");
     let addedProperty = this.state.dogFriendlyRestaurants.map((restaurant) => {
       restaurant.isHearted = false;
       restaurant.myDoggieImage = "";
+      if (this.state.myFaves.includes(restaurant.id)){
+      restaurant.isHearted = true;  
+      }
       return restaurant;
     });
     console.log("data with isHearted added:", addedProperty);
