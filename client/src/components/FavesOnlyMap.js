@@ -41,14 +41,14 @@ const { myFaves} = useContext(PawsContext);
       key={restaurant.id}
       id={restaurant.id}
       name={restaurant.name}
-      address={restaurant.location.address1}
+      address={restaurant.address}
       lat={restaurant.coordinates.latitude}
       lng={restaurant.coordinates.longitude}
       onClick={() =>
         setLocationInfo({
           name: restaurant.name,
-          address: restaurant.location.address1,
-          city: restaurant.location.city,
+          address: restaurant.address1,
+          city: restaurant.city,
           phone: restaurant.phone,
           isHearted: restaurant.isHearted,
         })
