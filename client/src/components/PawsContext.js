@@ -95,7 +95,9 @@ class PawsContextProvider extends Component {
     let addedProperty = this.state.dogFriendlyRestaurants.map((restaurant) => {
       console.log("restaurant.id", restaurant.id)
       console.log("this.state.myFaves", this.state.myFaves)
-      this.state.myFaves.includes({id: restaurant.id}) ? console.log("myFaves isHearted true") : console.log("myFaves isHearted false");
+      this.state.myFaves.includes({ id: restaurant.id })
+        ? restaurant.isHearted = true
+        : restaurant.isHearted = false;
       restaurant.myDoggieImage = "";
       return restaurant;
     });
