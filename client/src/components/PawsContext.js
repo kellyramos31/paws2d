@@ -77,18 +77,18 @@ class PawsContextProvider extends Component {
 
 updateDataToReflectLocalStorageOnLoad() {
 
-let result = this.state.dogFriendlyRestaurants.map((obj) => {
-  if(this.state.myFaves.includes(obj.id)){
-  obj.isHearted = true
+let result = this.state.dogFriendlyRestaurants.map((restaurant) => {
+  if(this.state.myFaves.includes(restaurant.id)){
   return {
-    obj
+    ...restaurant,
+    isHearted: true
   };
 } else {
-  return obj
+  return restaurant
 }
 });
 
-console.log(result);
+console.log("result", result);
 
 this.setState({
       dogFriendlyRestaurants: result,
