@@ -80,10 +80,8 @@ updateDataToReflectLocalStorageOnLoad() {
 let result = this.state.dogFriendlyRestaurants.map((restaurant) => {
   if(this.state.myFaves.includes(restaurant.id)){
     restaurant.isHearted = true
+  } 
   return restaurant
-} else {
-  return restaurant
-}
 });
 
 console.log("result", result);
