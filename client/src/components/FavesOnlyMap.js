@@ -20,11 +20,13 @@ export default function SLCMap() {
 
   // const { myFaves, filteredSearchList } = useContext(PawsContext);
 
-  const { myFaves } = useContext(PawsContext);
+  // const { myFaves } = useContext(PawsContext);
 
-  // let getFaveMarkers = filteredSearchList.filter(
-  //   (restaurant) => restaurant.isHearted
-  // );
+  let getFaveMarkers = filteredSearchList.filter(
+    (restaurant) => restaurant.isHearted
+  );
+
+  console.log("getFaveMarkers", getFaveMarkers)
 
   // if(myFaves){
   //   getFaveMarkers = [...myFaves]
@@ -34,7 +36,7 @@ export default function SLCMap() {
 
   // console.log("getFaveMarkers", getFaveMarkers);
 
-  const mapMarkers = myFaves.map((restaurant) => (
+  const mapMarkers = getFaveMarkers.map((restaurant) => (
     <LocationMarker
       key={restaurant.id}
       id={restaurant.id}
