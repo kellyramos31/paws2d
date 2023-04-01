@@ -22,19 +22,19 @@ const { myFaves, filteredSearchList } = useContext(PawsContext);
 
   // const { myFaves } = useContext(PawsContext);
 
-  let getFaveMarkers = filteredSearchList.filter(
-    (restaurant) => restaurant.isHearted
-  );
+  // let getFaveMarkers = filteredSearchList.filter(
+  //   (restaurant) => restaurant.isHearted
+  // );
 
-  console.log("getFaveMarkers", getFaveMarkers)
+  // console.log("getFaveMarkers", getFaveMarkers)
 
   // if(myFaves){
   //   getFaveMarkers = [...myFaves]
   // }
 
-  // const getFaveMarkers = [...myFaves];
+  const getFaveMarkers = [...myFaves];
 
-  // console.log("getFaveMarkers", getFaveMarkers);
+  console.log("getFaveMarkers", getFaveMarkers);
 
   const mapMarkers = getFaveMarkers.map((restaurant) => (
     <LocationMarker
