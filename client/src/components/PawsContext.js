@@ -93,7 +93,7 @@ console.log(result);
 
 this.setState({
       dogFriendlyRestaurants: result,
-
+      filteredSearchList: result
 })}
 
   addToggleProperty() {
