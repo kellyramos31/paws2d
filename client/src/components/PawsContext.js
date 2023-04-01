@@ -158,11 +158,11 @@ class PawsContextProvider extends Component {
     //   (business) => business.isHearted === false
     // );
 
-    this.setState({
-      dogFriendlyRestaurants: updatedDogFriendly,
-      filteredSearchList: updatedDogFriendly,
-      isHearted: !business.isHearted
-    });
+        this.setState({
+          dogFriendlyRestaurants: updatedDogFriendly,
+          filteredSearchList: updatedDogFriendly,
+          isHearted: !this.state.isHearted,
+        });
   };
 
   handleFave = (
