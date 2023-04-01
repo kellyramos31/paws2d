@@ -26,7 +26,7 @@ const { filteredSearchList } = useContext(PawsContext);
     (restaurant) => restaurant.isHearted
   );
 
-  // console.log("getFaveMarkers", getFaveMarkers)
+  console.log("getFaveMarkers that are hearted", getFaveMarkers)
 
   // if(myFaves){
   //   getFaveMarkers = [...myFaves]
@@ -34,7 +34,7 @@ const { filteredSearchList } = useContext(PawsContext);
 
   // const getFaveMarkers = [...myFaves];
 
-  console.log("myFaves to use for markers", myFaves);
+  // console.log("myFaves to use for markers", myFaves);
 
   const mapMarkers = getFaveMarkers.map((restaurant) => (
     <LocationMarker
