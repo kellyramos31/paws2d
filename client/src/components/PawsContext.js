@@ -173,12 +173,12 @@ class PawsContextProvider extends Component {
     city,
     phone,
     coordinates,
-    isHearted,
-    url,
-    price,
     rating,
     reviews,
-    image
+    price,
+    image,
+    isHearted,
+    url
   ) => {
     // console.log("current isHearted state:", business.isHearted);
     this.handleFaveToggle(id);
@@ -192,14 +192,15 @@ class PawsContextProvider extends Component {
       city: city,
       phone: phone,
       coordinates: coordinates,
-      isHearted: !isHearted,
-      url: url,
-      price: price,
       rating: rating,
       reviews: reviews,
+      price: price,
       image: image,
+      isHearted: !isHearted,
+      url: url,
       myDoggieImage: "",
     };
+
 
 
     console.log("newFave is:", newFave);
