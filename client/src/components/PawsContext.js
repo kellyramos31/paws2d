@@ -151,8 +151,7 @@ class PawsContextProvider extends Component {
         }
 
         return business;
-      }
-    );
+      });
 
     // const takeOut = updatedDogFriendly.filter(
     //   (business) => business.isHearted === false
@@ -163,8 +162,10 @@ class PawsContextProvider extends Component {
           filteredSearchList: updatedDogFriendly,
           isHearted: !this.state.isHearted,
         });
+
+        console.log("setState after fave toggle")
   };
-  
+
 
   handleFave = (
     id,
@@ -181,7 +182,7 @@ class PawsContextProvider extends Component {
     isHearted,
     url
   ) => {
-    // console.log("current isHearted state:", business.isHearted);
+    console.log("current isHearted state:", isHearted);
     this.handleFaveToggle(id);
     console.log("id:", id);
 
