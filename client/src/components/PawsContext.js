@@ -164,6 +164,7 @@ class PawsContextProvider extends Component {
           isHearted: !this.state.isHearted,
         });
   };
+  
 
   handleFave = (
     id,

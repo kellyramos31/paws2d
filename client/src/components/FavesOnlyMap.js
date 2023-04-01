@@ -7,7 +7,7 @@ import LocationInfoBox from "./LocationInfoBox";
 import "./FavesOnlyMap.css";
 import { PawsContext } from "./PawsContext";
 
-export default function SLCMap() {
+export default function FavesOnlyMap() {
   const [locationInfo, setLocationInfo] = useState(null);
 
   const defaultProps = {
