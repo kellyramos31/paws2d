@@ -254,7 +254,7 @@ class PawsContextProvider extends Component {
     this.handleFaveToggle(id);
 
     //remove item from localStorage
-    if (localStorage.getItem("info") !== null) {
+    if (localStorage.getItem("myFaves") !== null) {
       const localFaves = localStorage.getItem("myFaves");
       const updatedFaves = JSON.parse(localFaves);
       const index = updatedFaves.findIndex((item) => item.id === id);
